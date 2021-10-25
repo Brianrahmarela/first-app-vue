@@ -25,6 +25,11 @@ const router = new Router({
 					name: "summary",
 					component: () => import("./components/views/Summary.vue"),
 				},
+				{
+					path: "/message",
+					name: "message",
+					component: () => import("./components/views/Message.vue"),
+				},
 			],
 		},
 	],

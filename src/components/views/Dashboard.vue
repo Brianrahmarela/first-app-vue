@@ -1,13 +1,14 @@
 <template>
 	<div class="container">
 		<h2 class="mb-4">Dashboard App</h2>
-		<b-form @submit="onSubmit" @reset="onReset" v-if="show" >
+		<b-form @submit="onSubmit" @reset="onReset" v-if="show" name="submitform">
 			<b-form-group id="input-group-2" label="Nama" label-for="input-2" class="mb-4">
 				<b-form-input
 					id="input-2"
 					v-model="form.name"
 					placeholder="Enter your name"
 					class="mt-1"
+					name="nama"
 					required
 				></b-form-input>
 			</b-form-group>
@@ -18,6 +19,7 @@
 					v-model="form.nik"
 					placeholder="Enter NIK"
 					class="mt-1"
+					name="nik"
 					required
 				></b-form-input>
 			</b-form-group>
@@ -28,6 +30,7 @@
 					v-model="form.alamat"
 					placeholder="Enter your alamat"
 					class="mt-1"
+					name="alamat"
 				></b-form-input>
 			</b-form-group>
 
@@ -36,12 +39,13 @@
 					id="input-5"
 					v-model="form.tanggalLahir"
 					class="mt-1"
+					name="tanggallahir"
           placeholder="Your Birth Date"
 				></b-form-datepicker>
 			</b-form-group>
 
 			<!-- <b-button type="reset" variant="danger">Reset</b-button> -->
-			<b-button type="submit" variant="primary">Submit</b-button>
+			<b-button type="submit" variant="primary" data-test="submitted">Submit</b-button>
 		</b-form>
 
 	</div>
@@ -70,12 +74,13 @@ export default {
 		},
 		onReset(event) {
 			event.preventDefault();
-			// Reset our form values
+			// Reset form values
 			this.form.name = "";
 			this.form.nik = "";
 			this.form.alamat = "";
 			this.form.tanggalLahir = "";
-			// Trick to reset/clear native browser form validation state
+
+			// reset
 			this.show = false;
 			this.$nextTick(() => {
 				this.show = true;
