@@ -1,24 +1,6 @@
-# first-app-vue
+How to run this project:
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Clone this repository: https://github.com/Brianrahmarela/first-app-vue.git
+2. Open the folder with cd first-app-vue
+3. Install the apps or config with yarn install
+4. Run the apps with yarn serve
